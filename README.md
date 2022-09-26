@@ -1,11 +1,11 @@
-# odds_ratio
+# Odds Ratio Calculator
 
-Odds Ratio Calculator
+Odds Ratio Calculator and Fisher's Exact Test
 
-a — positive (bad)  cases in exposed group
-b - negative (good) cases in exposed group
-c - positive (bad)  cases in control group
-d - negative (good) cases in control group
+* a — positive (bad)  cases in exposed group
+* b - negative (good) cases in exposed group
+* c - positive (bad)  cases in control group
+* d - negative (good) cases in control group
 
 Haldane-Anscombe correction for zero：add 0.5 for a/b/c/d.
 
@@ -33,3 +33,8 @@ test.odds_ratio_ci       # '[1.64, 49.45]'
 test.pvalue_fisher       # 0.013814147851967653
 test.prob_fisher         # 0.006283257673691489
 ```
+
+## Reference
+
+- https://www.medcalc.org/calc/odds_ratio.php
+- https://en.wikipedia.org/wiki/Fisher%27s_exact_test
