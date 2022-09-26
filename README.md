@@ -2,7 +2,7 @@
 
 Odds Ratio Calculator and Fisher's Exact Test
 
-* a — positive (bad)  cases in exposed group
+* a - positive (bad)  cases in exposed group
 * b - negative (good) cases in exposed group
 * c - positive (bad)  cases in control group
 * d - negative (good) cases in control group
