@@ -43,6 +43,14 @@ class OddsRatio():
             
         return f'[{lower}, {upper}]'
 
+
+    @property
+    def odds_ratio_text(self):
+        if self.odds_ratio >= 1:
+            return '{:.2f}'.format(self.odds_ratio)
+        else:
+            return '{:.3g}'.format(self.odds_ratio)
+
         
     @property
     def or_ci_qc(self):
@@ -52,18 +60,18 @@ class OddsRatio():
             return 'PASS'
 
     @property
-    def pvalue_fisher(self):
+    def pvalue(self):
         pvalue = fisher_exact([[self.a,self.b], [self.c,self.d]])[1]
         return pvalue
 
 
     @property
-    def pvalue_fisher_text(self):
-        return '{:.3g}'.format(pvalue)
+    def pvalue_text(self):
+        return '{:.3g}'.format(self.pvalue_fisher)
 
 
     @property
-    def prob_fisher(self):
+    def prob(self):
         a, b, c, d = map(int, (self.a, self.b, self.c, self.d))
         m = factorial(a+b) * factorial(c+d) * factorial(a+c)  * factorial(b+d)
         n = factorial(a) * factorial(b) * factorial(c) * factorial(d) * factorial(a+b+c+d)

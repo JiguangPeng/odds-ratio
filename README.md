@@ -53,8 +53,8 @@ test.odds_ratio_upper    # 49.447399715087194
 test.odds_ratio_ci       # '[1.64, 49.45]'
 
 # Fisher's Exact Test
-test.pvalue_fisher       # 0.013814147851967653
-test.prob_fisher         # 0.006283257673691489
+test.pvalue       # 0.013814147851967653
+test.prob         # 0.006283257673691489
 ```
 
 ## Reference
