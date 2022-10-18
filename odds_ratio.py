@@ -67,7 +67,7 @@ class OddsRatio():
 
     @property
     def pvalue_text(self):
-        return '{:.3g}'.format(self.pvalue_fisher)
+        return '{:.3g}'.format(self.pvalue)
 
 
     @property
