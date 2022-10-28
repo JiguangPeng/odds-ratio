@@ -38,6 +38,7 @@ Fisher’s Exact Test is used to determine whether or not there is a significant
 
 ## Usage
 
+Module mode
 
 ```python
 from odds_ratio import OddsRatio
@@ -56,6 +57,19 @@ test.odds_ratio_ci       # '[1.64, 49.45]'
 test.pvalue       # 0.013814147851967653
 test.prob         # 0.006283257673691489
 ```
+
+Command mode
+
+```shell
+
+python odds_ratio.py -i a b c d
+
+#OR
+
+python odds_ratio.py -a INT -b INT -c INT -d INT
+
+```
+
 
 ## Reference
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2938757/

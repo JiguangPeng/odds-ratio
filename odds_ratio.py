@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 from math import log, exp, sqrt, factorial
 from scipy.stats import fisher_exact
 
@@ -77,3 +78,24 @@ class OddsRatio():
         n = factorial(a) * factorial(b) * factorial(c) * factorial(d) * factorial(a+b+c+d)
         return m/n
 
+
+if __name__ == '__main__':
+    options = argparse.ArgumentParser(prog='Odds Ratio Calculator',
+        description="python odds_ratio.py -i a b c d\nOR\npython odds_ratio.py -a INT -b INT -c INT -d INT",
+        formatter_class=argparse.RawTextHelpFormatter)
+    options.add_argument('-i', type=int, nargs='*', help='a b c d')
+    options.add_argument('-a', type=int, help='positive (bad) cases in exposed group')
+    options.add_argument('-b', type=int, help='negative (good) cases in exposed group')
+    options.add_argument('-c', type=int, help='positive (bad) cases in control group')
+    options.add_argument('-d', type=int, help='negative (good) cases in control group')
+    
+    args = options.parse_args()
+    if args.i:
+        result = OddsRatio(*args.i)
+    elif args.a and args.b and args.c and args.d:
+        result = OddsRatio(args.a, args.b, args.c, args.d)
+    else:
+        options.print_help()
+        exit(1)
+    print("Odds Ratio: {}\nOdds Ratio CI: {}\nP-value: {}\nProbability: {}".format(
+          result.odds_ratio_text, result.odds_ratio_ci, result.pvalue_text, result.prob))
