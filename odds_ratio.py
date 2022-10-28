@@ -42,7 +42,7 @@ class OddsRatio():
             upper = '{:.3g}'.format(self.odds_ratio_upper)
             lower = '{:.3g}'.format(self.odds_ratio_lower)
             
-        return f'[{lower}, {upper}]'
+        return f'{lower}-{upper}'
 
 
     @property
@@ -78,6 +78,10 @@ class OddsRatio():
         n = factorial(a) * factorial(b) * factorial(c) * factorial(d) * factorial(a+b+c+d)
         return m/n
 
+    @property
+    def prob_text(self):
+        return '{:.3g}'.format(self.prob)
+
 
 if __name__ == '__main__':
     options = argparse.ArgumentParser(prog='Odds Ratio Calculator',
@@ -98,4 +102,5 @@ if __name__ == '__main__':
         options.print_help()
         exit(1)
     print("Odds Ratio: {}\nOdds Ratio CI: {}\nP-value: {}\nProbability: {}".format(
-          result.odds_ratio_text, result.odds_ratio_ci, result.pvalue_text, result.prob))
+          result.odds_ratio_text, result.odds_ratio_ci, result.pvalue_text, result.prob_text))
+

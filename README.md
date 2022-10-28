@@ -61,13 +61,16 @@ test.prob         # 0.006283257673691489
 Command mode
 
 ```shell
+python3 odds_ratio.py -i 18 2 10 10
 
-python odds_ratio.py -i a b c d
+# OR
 
-#OR
+python odds_ratio.py -a 18 -b 2 -c 10 -d 10
 
-python odds_ratio.py -a INT -b INT -c INT -d INT
-
+#Odds Ratio: 9.00
+#Odds Ratio CI: 1.64-49.45
+#P-value: 0.0138
+#Probability: 0.00628
 ```
 
 
